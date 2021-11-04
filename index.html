@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
+		<title>TOP Library Project</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="" />
 		<script src="script.js" async defer></script>
@@ -15,26 +15,26 @@
 		</div>
 
 		<div class="btn-container">
-			<button id="open-form">Add</button>
+			<button id="open-form">Open Form</button>
 		</div>
 
 		<div class="card-container">
 			<div id="book-item"></div>
 		</div>
 
-		<div class="book-popup" id="book-form">
-			<form action="/script.js" class="form-container">
+		<div id="book-popup">
+			<form id="form-container">
 				<h3>Add New Book</h3>
 				<label for="title"><b>Title</b></label>
-				<input type="text" placeholder="Enter Title" name="title" required />
+				<input type="text" id="book-title" />
 				<br />
 				<label for="author"><b>Author</b></label>
-				<input type="text" placeholder="Enter Author" name="author" required />
+				<input type="text" id="book-author" />
 				<br />
 				<label for="pages"><b>Pages</b></label>
-				<input type="text" placeholder="Enter Number of Pages" name="pages" />
+				<input type="text" id="book-pages" />
 				<br />
-				<button type="submit" class="btn-add">Add</button>
+				<button type="submit" class="btn-add">Submit</button>
 				<br />
 				<button type="button" class="btn-close">Close</button>
 			</form>

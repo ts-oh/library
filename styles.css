@@ -9,12 +9,6 @@
 	align-content: center;
 }
 
-h1 {
-}
-
-p {
-}
-
 .card-container {
 	display: flex;
 	flex-direction: row;
@@ -41,7 +35,22 @@ p {
 	width: 280px;
 }
 
-.form-container {
+#book-item {
+	font-size: 1em;
+	border: solid;
+	flex-basis: 300px;
+}
+
+#book-popup {
+	display: none;
+	position: fixed;
+	bottom: 16px;
+	right: 8px;
+	padding: 8px;
+	border: 3px solid black;
+}
+
+#form-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -51,21 +60,11 @@ p {
 	background-color: white;
 }
 
-#book-item {
-	font-size: 1em;
-	border: solid;
-	flex-basis: 300px;
+#form-container > #book-title {
 }
-.book-popup {
-	display: none;
-	position: fixed;
-	bottom: 16px;
-	right: 8px;
-	padding: 8px;
-	border: 3px solid black;
-}
-.form-container > .btn-add {
-	background-color: mediumaquamarine;
+
+#form-container > .btn-add {
+	background-color: mediumseagreen;
 	color: black;
 	padding: 8px 16px;
 	border: solid 3px black;
@@ -73,8 +72,8 @@ p {
 	width: 100%;
 }
 
-.form-container > .btn-close {
-	background-color: rosybrown;
+#form-container > .btn-close {
+	background-color: palevioletred;
 	color: black;
 	padding: 8px 16px;
 	border: solid 3px black;
