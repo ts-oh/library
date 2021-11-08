@@ -1,4 +1,4 @@
-const bookDisplay = document.querySelector('#book-item');
+const bookContainer = document.querySelector('#card-container');
 
 // button to open pop-up form
 const openFormBtn = document.querySelector('#open-form');
@@ -42,28 +42,28 @@ addBtn.addEventListener('click', function (e) {
 
 	const newBook = new createBook(titleVal, authorVal, pagesVal, readBool);
 	console.log(newBook);
+
 	myLibrary.push(newBook);
-	Book();
+
+	Book(titleVal, authorVal, pagesVal, readBool);
 });
 
 let myLibrary = [];
 console.log(myLibrary);
 
-function Book() {
-	myLibrary.forEach((book) => {
-		const bookCardTitle = document.createElement('p');
-		const bookCardAuthor = document.createElement('p');
-		const bookCardPages = document.createElement('p');
-		const bookCardRead = document.createElement('p');
-		bookCardTitle.textContent = book.title;
-		bookCardAuthor.textContent = book.author;
-		bookCardPages.textContent = book.pages;
-		bookCardRead.textContent = book.read;
-		bookDisplay.appendChild(bookCardTitle);
-		bookDisplay.appendChild(bookCardAuthor);
-		bookDisplay.appendChild(bookCardPages);
-		bookDisplay.appendChild(bookCardRead);
-	});
+function Book(titleVal, authorVal, pagesVal, readBool) {
+	const bookCardTitle = document.createElement('h2');
+	const bookCardAuthor = document.createElement('p');
+	const bookCardPages = document.createElement('p');
+	const bookCardRead = document.createElement('p');
+	bookCardTitle.textContent = titleVal;
+	bookCardAuthor.textContent = authorVal;
+	bookCardPages.textContent = pagesVal;
+	bookCardRead.textContent = readBool;
+	bookContainer.appendChild(bookCardTitle);
+	bookContainer.appendChild(bookCardAuthor);
+	bookContainer.appendChild(bookCardPages);
+	bookContainer.appendChild(bookCardRead);
 }
 
 // An object constructor
