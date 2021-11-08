@@ -1,3 +1,4 @@
+// book container div
 const bookContainer = document.querySelector('#card-container');
 
 // button to open pop-up form
@@ -23,11 +24,14 @@ addBook.addEventListener('click', createBook);
 
 const addBtn = document.querySelector('.btn-add');
 
+// button to delete each book
+const delBtn = document.querySelector('.btn-delete');
+
 function isRead(readValue) {
-	if (readValue === 'read') {
-		return 'read';
-	} else if (readValue === 'not read') {
-		return 'not read';
+	if (readValue === 'true') {
+		return 'Read';
+	} else if (readValue === 'false') {
+		return 'Not Read';
 	}
 }
 
@@ -45,25 +49,42 @@ addBtn.addEventListener('click', function (e) {
 
 	myLibrary.push(newBook);
 
-	Book(titleVal, authorVal, pagesVal, readBool);
+	Book();
 });
 
 let myLibrary = [];
 console.log(myLibrary);
 
-function Book(titleVal, authorVal, pagesVal, readBool) {
+function Book() {
+	const bookAddedTitle = myLibrary[myLibrary.length - 1].title;
+	const bookAddedAuthor = myLibrary[myLibrary.length - 1].author;
+	const bookAddedPages = myLibrary[myLibrary.length - 1].pages;
+	const bookAddedRead = myLibrary[myLibrary.length - 1].read;
+
 	const bookCardTitle = document.createElement('h2');
 	const bookCardAuthor = document.createElement('p');
 	const bookCardPages = document.createElement('p');
 	const bookCardRead = document.createElement('p');
-	bookCardTitle.textContent = titleVal;
-	bookCardAuthor.textContent = authorVal;
-	bookCardPages.textContent = pagesVal;
-	bookCardRead.textContent = readBool;
+	const bookDelete = document.createElement('button');
+
+	bookDelete.classList.add('btn-delete');
+
+	bookCardTitle.textContent = bookAddedTitle;
+	bookCardAuthor.textContent = bookAddedAuthor;
+	bookCardPages.textContent = bookAddedPages;
+	bookCardRead.textContent = bookAddedRead;
+	bookDelete.textContent = 'Delete';
+
 	bookContainer.appendChild(bookCardTitle);
 	bookContainer.appendChild(bookCardAuthor);
 	bookContainer.appendChild(bookCardPages);
 	bookContainer.appendChild(bookCardRead);
+	bookContainer.appendChild(bookDelete);
+
+	delBtn.addEventListener('click', function (e) {
+		e.preventDefault();
+		console.log('this is delete btn');
+	});
 }
 
 // An object constructor

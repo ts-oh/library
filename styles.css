@@ -27,6 +27,8 @@
 	width: 280px;
 }
 
+.btn-delete {}
+
 #card-container {
 	display: block;
 	border: 3px solid black;
@@ -35,7 +37,6 @@
 	align-content: center;
 	padding: 16px, 16px, 16px, 16px;
 }
-
 
 #book-popup {
 	display: none;
