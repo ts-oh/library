@@ -15,47 +15,64 @@ const bookAuthor = document.forms['form-container']['book-author'];
 
 const bookPages = document.forms['form-container']['book-pages'];
 
+const bookRead = document.forms['form-container']['readCheckBox'];
+
 // add button to add new books from the pop-up form
 const addBook = document.querySelector('.btn-add');
-addBook.addEventListener('click', addBookToLibrary);
+addBook.addEventListener('click', createBook);
 
 const addBtn = document.querySelector('.btn-add');
 
+function isRead(readValue) {
+	if (readValue === 'read') {
+		return 'read';
+	} else if (readValue === 'not read') {
+		return 'not read';
+	}
+}
+
 addBtn.addEventListener('click', function (e) {
 	e.preventDefault();
-	const bookTitleValue = bookTitle.value;
-	const bookAuthorValue = bookAuthor.value;
-	const bookPagesValue = bookPages.value;
-	const newBook = new addBookToLibrary(
-		bookTitleValue,
-		bookAuthorValue,
-		bookPagesValue
-	);
+	const titleVal = bookTitle.value;
+	const authorVal = bookAuthor.value;
+	const pagesVal = bookPages.value;
+	const readVal = bookRead.value;
+
+	const readBool = isRead(readVal);
+
+	const newBook = new createBook(titleVal, authorVal, pagesVal, readBool);
 	console.log(newBook);
 	myLibrary.push(newBook);
+	Book();
 });
 
 let myLibrary = [];
 console.log(myLibrary);
 
 function Book() {
-	// the constructor
 	myLibrary.forEach((book) => {
-		const bookCard = document.createElement('h1');
-		bookCard.textContent = book;
-		bookDisplay.appendChild(bookCard);
+		const bookCardTitle = document.createElement('p');
+		const bookCardAuthor = document.createElement('p');
+		const bookCardPages = document.createElement('p');
+		const bookCardRead = document.createElement('p');
+		bookCardTitle.textContent = book.title;
+		bookCardAuthor.textContent = book.author;
+		bookCardPages.textContent = book.pages;
+		bookCardRead.textContent = book.read;
+		bookDisplay.appendChild(bookCardTitle);
+		bookDisplay.appendChild(bookCardAuthor);
+		bookDisplay.appendChild(bookCardPages);
+		bookDisplay.appendChild(bookCardRead);
 	});
 }
 
 // An object constructor
-function addBookToLibrary(title, author, pages) {
-	// add books
+function createBook(title, author, pages, read) {
 	this.title = title;
 	this.author = author;
 	this.pages = pages;
+	this.read = read;
 }
-
-Book();
 
 function openForm() {
 	document.querySelector('#book-popup').style.display = 'block';

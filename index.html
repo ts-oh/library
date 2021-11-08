@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>TOP Library Project</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="" />
-		<script src="script.js" async defer></script>
-		<link rel="stylesheet" href="styles.css" />
-	</head>
 
-	<body>
-		<div class="header-container">
-			<h1>Library Project</h1>
-		</div>
+<head>
+	<meta charset="utf-8" />
+	<title>TOP Library Project</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="" />
+	<script src="script.js" async defer></script>
+	<link rel="stylesheet" href="styles.css" />
+</head>
 
-		<div class="btn-container">
-			<button id="open-form">Open Form</button>
-		</div>
+<body>
+	<div class="header-container">
+		<h1>Library Project</h1>
+	</div>
 
-		<div class="card-container">
-			<div id="book-item"></div>
-		</div>
+	<div class="btn-container">
+		<button id="open-form">Open Form</button>
+	</div>
 
-		<div id="book-popup">
-			<form id="form-container">
-				<h3>Add New Book</h3>
-				<label for="title"><b>Title</b></label>
-				<input type="text" id="book-title" />
-				<br />
-				<label for="author"><b>Author</b></label>
-				<input type="text" id="book-author" />
-				<br />
-				<label for="pages"><b>Pages</b></label>
-				<input type="text" id="book-pages" />
-				<br />
-				<button type="submit" class="btn-add">Submit</button>
-				<br />
-				<button type="button" class="btn-close">Close</button>
-			</form>
+	<!-- Book Card -->
+	<div class="card-container">
+		<div id="book-item">
+			<ul id="book-info"></ul>
 		</div>
-	</body>
+	</div>
+
+	<!--Book add popup-->
+	<div id="book-popup">
+		<form id="form-container">
+			<h3>Add New Book</h3>
+			<label for="title"><b>Title</b></label>
+			<input type="text" id="book-title" />
+			<br />
+			<label for="author"><b>Author</b></label>
+			<input type="text" id="book-author" />
+			<br />
+			<label for="pages"><b>Pages</b></label>
+			<input type="text" id="book-pages" />
+			<br />
+			<label for="read">
+				<b>Read?</b>
+				<select name="read-selection" id="readCheckBox" />
+				<option value="read">Yes</option>
+				<option value="not read">No</option> </select>
+			</label>
+			<br />
+			<button type="submit" class="btn-add">Submit</button>
+			<br />
+			<button type="button" class="btn-close">Close</button>
+		</form>
+	</div>
+</body>
+
 </html>
