@@ -1,64 +1,39 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
-	<meta charset="utf-8" />
-	<title>TOP Library Project</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="" />
-	<script src="script.js" async defer></script>
-	<link rel="stylesheet" href="styles.css" />
+  <title>My Library 🏛</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <!--Heading-->
+  <h1>Library 📚</h1>
 
-	<!--Heading-->
-	<Heading>
-		<div class="header-container">
-			<h1>Library Project</h1>
-		</div>
-	</Heading>
+  <!--Add Book Button-->
+  <button id="open-modal-btn">New Book ➕</button>
 
-	<!-- Book Card -->
-	<Main>
-		<div id="card-container">
-		</div>
-	</Main>
+  <!--Overlay div-->
+  <div id="overlay">
+    <div id="modal">
+      <p>Add New Book</p>
+      <label for="title-input">Title:</label>
+      <input type="text" id="title-input" placeholder="enter title">
+      <label for="author-input">Author:</label>
+      <input type="text" id="author-input" placeholder="enter author">
+      <label for="pages-input">Pages:</label>
+      <input type="text" id="pages-input" placeholder="enter pages">
+      <input type="checkbox" id="readCheck" value='read' checked>Read?</input>
+      <button id="add-book-btn">Submit 📥</button>
+      <button id="close-modal-btn">Close ❌</button>
+    </div>
+  </div>
 
-	<!--Add Button-->
-	<section>
-		<div class="btn-container">
-			<button id="open-form">Open Form</button>
-		</div>
-		</div>
-	</section>
-
-	<!--Add Book Popup-->
-	<div id="book-popup">
-		<form id="form-container">
-			<h3>Add New Book</h3>
-			<label for="title"><b>Title</b></label>
-			<input type="text" id="book-title" />
-			<br />
-			<label for="author"><b>Author</b></label>
-			<input type="text" id="book-author" />
-			<br />
-			<label for="pages"><b>Pages</b></label>
-			<input type="text" id="book-pages" />
-			<br />
-			<label for="read">
-				<b>Read?</b>
-				<select name="read-selection" id="readCheckBox" />
-				<option value="true">Yes</option>
-				<option value="false">No</option> </select>
-			</label>
-			<br />
-			<button type="submit" class="btn-add">Submit</button>
-			<br />
-			<button type="button" class="btn-close">Close</button>
-		</form>
-	</div>
-
+  <div class="library-container">
+    <!--create library book containers here in JS-->
+  </div>
+  <script src="script.js"></script>
 </body>
 
 </html>
