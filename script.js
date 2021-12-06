@@ -10,14 +10,6 @@ const read = document.querySelector('#read-radio');
 const notRead = document.querySelector('#not-read-radio');
 const libraryContainer = document.querySelector('.library-container');
 
-//const deleteBookBtn = document.querySelectorAll('.delete-book-btn');
-
-// deleteBookBtn.forEach((book) =>
-// 	book.addEventListener('click', function () {
-// 		console.log('button is clicked');
-// 	})
-// );
-
 openModalBtn.addEventListener('click', function () {
 	document.querySelector('#overlay').style.display = 'block';
 });
@@ -36,7 +28,6 @@ addBookBtn.addEventListener('click', function () {
 	let newBook = new Book(title.value, author.value, pages.value, read.value);
 
 	myLibrary.push(newBook);
-	console.log(myLibrary);
 	clearDisplay();
 	renderDisplay();
 });
@@ -48,7 +39,6 @@ function Book(title, author, pages, read) {
 	this.read = read;
 }
 
-// render read string from my library
 function renderDisplay() {
 	libraryContainer.innerHTML = '';
 	for (let i = 0; i < myLibrary.length; i++) {
@@ -64,22 +54,22 @@ function renderDisplay() {
 	}
 }
 
-function readStatusChange(index) {
-	if (myLibrary[index].read === 'Yes') {
-		myLibrary[index].read = 'No';
-	} else if (myLibrary[index].read === 'No') {
-		myLibrary[index].read = 'Yes';
-	}
-	clearDisplay();
-	renderDisplay();
-}
-
 function clearDisplay() {
 	libraryContainer.innerHTML = '';
 }
 
 function deleteBook(index) {
 	myLibrary.splice(index, 1);
+	clearDisplay();
+	renderDisplay();
+}
+
+function readStatusChange(index) {
+	if (myLibrary[index].read === 'Yes') {
+		myLibrary[index].read = 'No';
+	} else if (myLibrary[index].read === 'No') {
+		myLibrary[index].read = 'Yes';
+	}
 	clearDisplay();
 	renderDisplay();
 }
