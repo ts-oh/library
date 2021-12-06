@@ -18,7 +18,7 @@ label {
 input {
   display: block;
   margin: 8px;
-  font-size: 16px;
+  font-size: 18px;
   width: 100%;
 }
 
@@ -26,7 +26,7 @@ button {
   display: block;
   margin: 8px;
   font-size: 18px;
-  width: 125px;
+  width: 140px;
   text-align: center;
 }
 
@@ -35,12 +35,13 @@ button {
   cursor: pointer;
   margin: 0;
   border: 1px solid black;
+  width: 175px;
 }
 
 #modal {
   display: block;
   background-color: white;
-  max-width: 270px;
+  max-width: 275px;
   margin: 0 auto;
   height: auto;
   position: relative;
@@ -58,7 +59,7 @@ button {
   display: inline;
   cursor: pointer;
   margin: 20px 0px 10px 0px;
-  width: 130px;
+  width: 120px;
   font-size: 18px;
   border: 1px solid black;
 }
@@ -66,7 +67,7 @@ button {
 #modal input {
   font-size: 18px;
   display: inline-block;
-  width: 260px;
+  width: 200px;
   margin: 5px 0px;
 }
 
@@ -87,12 +88,12 @@ button {
 }
 
 .library-container {
-
   margin: 20px 0px 20px 0px
 }
 
 .book-container {
   display: inline-block;
+  font-size: 18px;
   padding: 5px;
   margin: 10px 0px;
   width: 200px;
@@ -104,6 +105,18 @@ button {
   display: block;
   margin: 8px;
   font-size: 18px;
-  width: 150px;
+  width: 160px;
   text-align: center;
+}
+
+#read-status {
+  display: block;
+  margin: 8px;
+  font-size: 18px;
+  width: 160px;
+  text-align: center;
+}
+
+#read-radio {
+  display: block;
 }

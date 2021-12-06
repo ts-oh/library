@@ -3,28 +3,33 @@
 <html>
 
 <head>
-  <title>My Library 🏛</title>
+  <title>Library Project</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <!--Heading-->
-  <h1>Library 📚</h1>
+  <h1>🏛 My Library 📚</h1>
 
   <!--Add Book Button-->
-  <button id="open-modal-btn">New Book ➕</button>
+  <button id="open-modal-btn">Add New Book 📇</button>
 
   <!--Overlay div-->
   <div id="overlay">
     <div id="modal">
-      <p>Add New Book</p>
-      <label for="title-input">Title:</label>
+      <p>New Book</p>
+      <label for="title-input">📖 Title:</label>
       <input type="text" id="title-input" placeholder="enter title">
-      <label for="author-input">Author:</label>
+      <label for="author-input">✍🏼 Author:</label>
       <input type="text" id="author-input" placeholder="enter author">
-      <label for="pages-input">Pages:</label>
-      <input type="text" id="pages-input" placeholder="enter pages">
-      <input type="checkbox" id="readCheck" value='read' checked>Read?</input>
+      <label for="pages-input">🔢 Pages:</label>
+      <input type="number" id="pages-input" placeholder="enter pages">
+      <label for="read-radio">✅ Read:</label>
+      <input id="read-radio" type="radio" name="read-or-not" value="true">
+      <br>
+      <label for="not-read-radio">🙅🏻‍♂️ Not Read:</label>
+      <input id="not-read-radio" type="radio" name="read-or-not">
+      <br>
       <button id="add-book-btn">Submit 📥</button>
       <button id="close-modal-btn">Close ❌</button>
     </div>
