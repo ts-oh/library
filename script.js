@@ -1,4 +1,11 @@
-let myLibrary = [];
+let myLibrary = [
+	{
+		title: 'Add your book Title',
+		author: 'The name of the Author',
+		pages: '777',
+		read: 'Yes',
+	},
+];
 
 const openModalBtn = document.querySelector('#open-modal-btn');
 const closeModalBtn = document.querySelector('#close-modal-btn');
@@ -30,6 +37,7 @@ addBookBtn.addEventListener('click', function () {
 	myLibrary.push(newBook);
 	clearDisplay();
 	renderDisplay();
+	document.querySelector('#overlay').style.display = 'none';
 });
 
 function Book(title, author, pages, read) {
@@ -46,8 +54,8 @@ function renderDisplay() {
 				<p><b>Title:</b> ${myLibrary[i].title}</p>
 				<p><b>Author:</b> ${myLibrary[i].author}</p>
 				<p><b>Pages:</b> ${myLibrary[i].pages}</p>
-				<p><b>Read?:</b> ${myLibrary[i].read}</p> <button id="read-status" onclick="readStatusChange(${i})">Toggle Read 🙋🏻</button>
-				<button class="delete-book-btn" onclick="deleteBook(${i})">
+				<p><b>Read?:</b> ${myLibrary[i].read}</p> <button id="read-status-btn" onclick="readStatusChange(${i})">Read? 🙋🏻 or 🙅🏻‍♂️</button>
+				<button id="delete-book-btn" onclick="deleteBook(${i})">
 					Remove 📤
 				</button>
 			</div>`;
@@ -73,3 +81,5 @@ function readStatusChange(index) {
 	clearDisplay();
 	renderDisplay();
 }
+
+renderDisplay();
