@@ -71,12 +71,12 @@ div #modal-container {
   font-weight: bold;
   border: 2px solid black;
   border-radius: 8px;
-  background: gainsboro;
+  background: rgb(240, 240, 240);
   color: black;
 }
 
 #modal button:hover {
-  background: lightgray;
+  background: gainsboro;
 }
 
 #modal input.modal-book {
