@@ -4,7 +4,10 @@
 }
 
 body {
-  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
   background: rgb(235, 235, 235);
   overflow: auto;
 }
@@ -19,27 +22,9 @@ h1 {
   margin: 50px 0px;
 }
 
-label {
-  font-weight: bold;
-}
-
-input {
-  display: block;
-  margin: 8px;
-  font-size: 20px;
-  width: 100%;
-}
-
-button {
-  display: block;
-  margin: 8px;
-  font-size: 20px;
-  width: 140px;
-  text-align: center;
-}
-
 #open-modal-btn {
   cursor: pointer;
+  font-size: 20px;
   font-weight: bold;
   border: 2px solid black;
   border-radius: 8px;
@@ -56,7 +41,7 @@ button {
 #modal {
   display: block;
   background-color: white;
-  max-width: 280px;
+  max-width: 300px;
   margin: 0 auto;
   height: auto;
   position: relative;
@@ -80,10 +65,11 @@ div #modal-container {
 
 #modal button {
   cursor: pointer;
-  margin: 10px 5px;
+  margin: 10px;
   padding: 5px;
-  width: 120px;
+  width: 125px;
   font-size: 20px;
+  font-weight: bold;
   border: 2px solid black;
   border-radius: 8px;
 }
@@ -103,14 +89,17 @@ div #modal-container {
 }
 
 #modal label {
+  font-weight: bold;
   margin: 5px 0px;
 }
 
 #modal label[for="read-radio"] {
+  font-size: 20px;
   margin: 0px 5px 0px 0px;
 }
 
 #modal label[for="not-read-radio"] {
+  font-size: 20px;
   margin: 0px 5px 0px 20px;
 }
 
@@ -165,6 +154,7 @@ input#not-read-radio {
   font-weight: bold;
   width: 160px;
   height: 38px;
+  margin: 20px 0px 20px 0px;
   text-align: center;
   border: solid 2px black;
   border-radius: 8px;
@@ -195,9 +185,10 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: auto;
   border: none;
   align-items: center;
-  margin: 200px 0px 20px 0px;
+  min-height: 75px;
 }
 
 .footer-link {
@@ -209,7 +200,7 @@ footer {
 }
 
 footer a {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   color: black;
   text-decoration: none;
