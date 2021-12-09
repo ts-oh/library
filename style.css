@@ -30,7 +30,8 @@ h1 {
   width: 200px;
   padding: 10px 10px;
   margin: 20px 0px;
-  background: lavender
+  background: lavender;
+  color: black
 }
 
 #open-modal-btn:hover {
