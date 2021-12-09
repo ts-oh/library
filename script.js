@@ -17,28 +17,39 @@ const read = document.querySelector('#read-radio');
 const notRead = document.querySelector('#not-read-radio');
 const libraryContainer = document.querySelector('.library-container');
 
-openModalBtn.addEventListener('click', function () {
-	document.querySelector('#overlay').style.display = 'block';
-});
+openModalBtn.addEventListener('click', openModal);
 
-closeModalBtn.addEventListener('click', function () {
-	document.querySelector('#overlay').style.display = 'none';
-});
+closeModalBtn.addEventListener('click', closeModal);
 
 addBookBtn.addEventListener('click', function () {
-	if (read.checked === true) {
-		read.value = 'Yes';
-	} else if (notRead.checked === true) {
-		read.value = 'No';
-	}
-
-	let newBook = new Book(title.value, author.value, pages.value, read.value);
-
-	myLibrary.push(newBook);
+	readValueCheck();
+	createNewBook();
 	clearDisplay();
 	renderDisplay();
-	document.querySelector('#overlay').style.display = 'none';
+	closeModal();
 });
+
+function openModal() {
+	document.querySelector('#overlay').style.display = 'block';
+}
+
+function closeModal() {
+	document.querySelector('#overlay').style.display = 'none';
+}
+
+function readValueCheck() {
+	if (read.checked === true) {
+		return (read.value = 'Yes');
+	} else if (notRead.checked === true) {
+		return (read.value = 'No');
+	}
+}
+
+function createNewBook() {
+	let newBook = new Book(title.value, author.value, pages.value, read.value);
+	myLibrary.push(newBook);
+	return newBook;
+}
 
 function Book(title, author, pages, read) {
 	this.title = title;
