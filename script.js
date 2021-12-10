@@ -16,18 +16,20 @@ const pages = document.querySelector('#pages-input');
 const read = document.querySelector('#read-radio');
 const notRead = document.querySelector('#not-read-radio');
 const libraryContainer = document.querySelector('.library-container');
+const error = document.querySelector('#error');
 
 openModalBtn.addEventListener('click', openModal);
 
 closeModalBtn.addEventListener('click', closeModal);
 
-addBookBtn.addEventListener('click', function () {
+addBookBtn.addEventListener('click', addNewBookToLibrary);
+
+function addNewBookToLibrary() {
 	readValueCheck();
 	createNewBook();
 	clearDisplay();
 	renderDisplay();
-	closeModal();
-});
+}
 
 function openModal() {
 	document.querySelector('#overlay').style.display = 'block';
@@ -35,6 +37,7 @@ function openModal() {
 
 function closeModal() {
 	document.querySelector('#overlay').style.display = 'none';
+	error.innerHTML = '';
 }
 
 function readValueCheck() {
@@ -46,12 +49,14 @@ function readValueCheck() {
 }
 
 function createNewBook() {
-	if (title.value === '' && (author.value === '') & (pages.value === '')) {
-		return alert('empty field');
+	if (title.value === '' && author.value === '' && pages.value === '') {
+		return (error.innerHTML =
+			"<span style='color: red;'>" + 'Please enter a valid input</span>');
 	} else {
 		let newBook = new Book(title.value, author.value, pages.value, read.value);
 		myLibrary.push(newBook);
 		trimBookObj();
+		closeModal();
 		return newBook;
 	}
 }
@@ -65,9 +70,9 @@ function Book(title, author, pages, read) {
 
 function trimBookObj() {
 	myLibrary.forEach((i) => {
-		i.title = i.title.trim();
-		i.author = i.author.trim();
-		i.pages = i.pages.trim();
+		i.title = i.title.replace(/\s+/g, ' ').trim();
+		i.author = i.author.replace(/\s+/g, ' ').trim();
+		i.pages = i.pages.replace(/\s+/g, ' ').trim();
 	});
 }
 
