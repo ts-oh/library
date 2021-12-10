@@ -41,7 +41,7 @@ h1 {
 #modal {
   display: block;
   background-color: white;
-  max-width: 320px;
+  width: 325px;
   margin: 0 auto;
   height: auto;
   position: relative;
@@ -80,17 +80,24 @@ div #modal-container {
   background: gainsboro;
 }
 
+span#error {
+  height: 25px;
+  font-weight: bold;
+  font-size: 20px;
+  color: red;
+  margin: 5px 0px 5px 0px;
+}
+
 #modal input.modal-book {
-  width: 90%;
-  margin: 5px
+  width: 85%;
+  margin: 0px 5px;
+  padding: 5px
 }
 
 #modal input {
   width: auto;
   font-size: 20px;
-  margin: 5px 0px;
   border: black solid 2px;
-
 }
 
 #modal label {
@@ -234,7 +241,7 @@ footer img {
   flex-direction: row;
   align-items: baseline;
   justify-content: center;
-  margin: 20px;
+  margin: 0px 0px 10px 0px;
 }
 
 .btn-modal {
