@@ -50,8 +50,7 @@ function readValueCheck() {
 
 function createNewBook() {
 	if (title.value === '' && author.value === '' && pages.value === '') {
-		return (error.innerHTML =
-			"<span style='color: red;'>" + 'Please enter a valid input</span>');
+		return (error.textContent = 'Please enter your book input ⚠️');
 	} else {
 		let newBook = new Book(title.value, author.value, pages.value, read.value);
 		myLibrary.push(newBook);
