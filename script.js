@@ -46,9 +46,14 @@ function readValueCheck() {
 }
 
 function createNewBook() {
-	let newBook = new Book(title.value, author.value, pages.value, read.value);
-	myLibrary.push(newBook);
-	return newBook;
+	if (title.value === '' && (author.value === '') & (pages.value === '')) {
+		return alert('empty field');
+	} else {
+		let newBook = new Book(title.value, author.value, pages.value, read.value);
+		myLibrary.push(newBook);
+		trimBookObj();
+		return newBook;
+	}
 }
 
 function Book(title, author, pages, read) {
@@ -56,6 +61,14 @@ function Book(title, author, pages, read) {
 	this.author = author;
 	this.pages = pages;
 	this.read = read;
+}
+
+function trimBookObj() {
+	myLibrary.forEach((i) => {
+		i.title = i.title.trim();
+		i.author = i.author.trim();
+		i.pages = i.pages.trim();
+	});
 }
 
 function renderDisplay() {
