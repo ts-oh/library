@@ -1,65 +1,78 @@
 <!DOCTYPE html>
 
 <html>
+	<head>
+		<title>Library Project</title>
+		<link rel="stylesheet" href="style.css" />
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+		</style>
+	</head>
 
-<head>
-  <title>Library Project</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
-  </style>
-</head>
+	<body>
+		<h1>🏛 My Library 📚</h1>
 
-<body>
-  <h1>🏛 My Library 📚</h1>
+		<div class="modal-button-container">
+			<button id="open-modal-btn">Add New Book 📇</button>
+		</div>
 
-  <div class="modal-button-container">
-    <button id="open-modal-btn">Add New Book 📇</button>
-  </div>
+		<!--Overlay div-->
+		<div id="overlay">
+			<div id="modal">
+				<h2>New Book</h2>
 
-  <!--Overlay div-->
-  <div id="overlay">
-    <div id="modal">
-      <h2>New Book</h2>
+				<div id="modal-container">
+					<label for="title-input">📖 Title </label>
+					<input
+						type="text"
+						id="title-input"
+						class="modal-book"
+						placeholder="enter title"
+					/>
+					<label for="author-input">✍🏼 Author </label>
+					<input
+						type="text"
+						id="author-input"
+						class="modal-book"
+						placeholder="enter author"
+					/>
+					<label for="pages-input">🔢 Pages </label>
+					<input
+						type="number"
+						id="pages-input"
+						class="modal-book"
+						placeholder="enter pages"
+					/>
+					<span id="error"></span>
+				</div>
 
-      <div id="modal-container">
-        <label for="title-input">📖 Title </label>
-        <input type="text" id="title-input" class="modal-book" placeholder="enter title" />
-        <label for="author-input">✍🏼 Author </label>
-        <input type="text" id="author-input" class="modal-book" placeholder="enter author" />
-        <label for="pages-input">🔢 Pages </label>
-        <input type="number" id="pages-input" class="modal-book" placeholder="enter pages" />
-        <span id="error"></span>
-      </div>
+				<div class="read-modal">
+					<label for="read-radio">✅ Read </label>
+					<input id="read-radio" type="radio" name="read-or-not" value="true" />
+					<label for="not-read-radio">🙅🏻‍♂️ Not Read </label>
+					<input id="not-read-radio" type="radio" name="read-or-not" />
+				</div>
 
-      <div class="read-modal">
-        <label for="read-radio">✅ Read </label>
-        <input id="read-radio" type="radio" name="read-or-not" value="true" />
-        <label for="not-read-radio">🙅🏻‍♂️ Not Read </label>
-        <input id="not-read-radio" type="radio" name="read-or-not" />
-      </div>
+				<div class="btn-modal">
+					<button id="add-book-btn">Submit 📥</button>
+					<button id="close-modal-btn">Close ❌</button>
+				</div>
+			</div>
+		</div>
 
-      <div class="btn-modal">
-        <button id="add-book-btn">Submit 📥</button>
-        <button id="close-modal-btn">Close ❌</button>
-      </div>
+		<div class="library-container">
+			<!--create library book containers here in JS-->
+		</div>
+	</body>
 
-    </div>
-  </div>
+	<footer>
+		<div class="footer-link">
+			<a href="https://github.com/bonepugznharmony?tab=repositories"
+				>Back to ts-oh repo</a
+			>
+			<img src="./images/Octocat.png" alt="Github Icon" />
+		</div>
+	</footer>
 
-  <div class="library-container">
-    <!--create library book containers here in JS-->
-  </div>
-
-</body>
-
-<footer>
-  <div class="footer-link">
-    <a href="https://github.com/ts-oh?tab=repositories">Back to ts-oh repo</a>
-    <img src="./images/Octocat.png" alt="Github Icon" />
-  </div>
-</footer>
-
-<script src="script.js"></script>
-
+	<script src="script.js"></script>
 </html>
