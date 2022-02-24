@@ -26,4 +26,4 @@ Live Demo: https://ts-oh.github.io/library/
 
 ### Lessons/Comments
 
-This project involved creating a constructor (later class syntax) to create instances of book objects. The initial challenges that I faced were how to create a new book object by receiving values from the user. Other challenges included were how to change the read status on the object and deleting specific books through DOM manipulation. Overall, I had enjoyed making this since the project was practical and I could see how some of these aspects are seen in real-world applications.
+This project involved creating a constructor (later class syntax) to create instances of book objects. The initial challenges that I faced were how to create a new book object by receiving values from the user. Other challenges included, how to change the read status on the object and deleting specific books through DOM manipulation. Overall, I had fun making this since the project was practical and I could see how some of these aspects are seen in real-world applications.
